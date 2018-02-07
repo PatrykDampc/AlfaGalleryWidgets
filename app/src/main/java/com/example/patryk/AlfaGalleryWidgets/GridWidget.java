@@ -23,7 +23,7 @@ public class GridWidget extends AppWidgetProvider {
             int appWidgetId = intent.getIntExtra(AppWidgetManager.EXTRA_APPWIDGET_ID,
                     AppWidgetManager.INVALID_APPWIDGET_ID);
             String uriString = intent.getStringExtra("Uri_key");
-            context.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(uriString)));
+            context.startActivity(new Intent(Intent.ACTION_VIEW).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK).setDataAndType(Uri.parse(uriString), "image/*"));
         }
 
 
