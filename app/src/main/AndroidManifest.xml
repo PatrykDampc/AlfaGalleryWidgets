@@ -24,6 +24,11 @@
         <service
             android:name="com.example.patryk.AlfaGalleryWidgets.util.WidgetRemoteViewsService"
             android:permission="android.permission.BIND_REMOTEVIEWS" />
+        <activity android:name=".GridWidgetConfigure">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE" />
+            </intent-filter>
+        </activity>
 
     </application>
 

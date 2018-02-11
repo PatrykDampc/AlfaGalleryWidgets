@@ -3,4 +3,10 @@
     <string name="appwidget_text">EXAMPLE</string>
     <string name="add_widget">Add widget</string>
     <string name="configure">Configure</string>
+    <string name="ThemeTextView">Select theme:</string>
+    <string name="ThemeDarkRadio">Dark (Default)</string>
+    <string name="ThemeWhiteRadio">White</string>
+    <string name="ThemeTransparentRadio">Transparent</string>
+    <string name="LabelSwitch">\"Recent Images\" label</string>
+    <string name="addButtonText">Add Widget</string>
 </resources>

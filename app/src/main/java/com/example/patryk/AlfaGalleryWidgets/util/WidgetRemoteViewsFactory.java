@@ -50,8 +50,8 @@ public class WidgetRemoteViewsFactory implements RemoteViewsService.RemoteViewsF
         cursor.moveToFirst();
         for (int i = 1; i <= imagesQuantity; i++) {
             Bitmap bmp = BitmapFactory.decodeFile(cursor.getString(1));
-            Uri imageUri= ContentUris.withAppendedId(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, cursor.getInt(cursor.getColumnIndex(MediaStore.Images.ImageColumns._ID)));
-            photos.add(bmp);
+            Uri imageUri = ContentUris.withAppendedId(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, cursor.getInt(cursor.getColumnIndex(MediaStore.Images.ImageColumns._ID)));
+            photos.add(BitmapResizer.resizeBitmap(250,250,bmp));
             uris.add(imageUri);
             cursor.moveToNext();
             Log.d(TAG, "loop iteration" + i );
@@ -77,7 +77,8 @@ public class WidgetRemoteViewsFactory implements RemoteViewsService.RemoteViewsF
             return null;
         }
             RemoteViews views = new RemoteViews(ctx.getPackageName(), R.layout.widget_item);
-            Bitmap img = BitmapResizer.resizeBitmap(250, 250, photos.get(position));
+           // Bitmap img = BitmapResizer.resizeBitmap(250, 250, photos.get(position));
+            Bitmap img = photos.get(position);
             views.setImageViewBitmap(R.id.widget_item, img);
 
         Bundle extras = new Bundle();
