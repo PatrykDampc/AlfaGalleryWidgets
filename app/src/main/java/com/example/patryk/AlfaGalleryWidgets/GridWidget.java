@@ -20,7 +20,7 @@ public class GridWidget extends AppWidgetProvider {
     static void updateAppWidget(Context context, AppWidgetManager appWidgetManager,
                                 int appWidgetId) {
 
-        Boolean isThemeDefault = GridWidgetConfigure.loadPrefs(context, appWidgetId);
+        boolean isThemeDefault = GridWidgetConfigure.loadPrefs(context, appWidgetId);
 
         RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.grid_widget);
         if (!isThemeDefault) {
